@@ -6,9 +6,11 @@
           class="btn btn-sm btn-secondary me-2"
           data-bs-toggle="collapse"
           data-bs-target="#subTree"
+          (click)="toggleCollapse()"
         >
-          MARKA
+          {{ collapseButtonText }}
         </button>
+        <td>Araç Marka</td>
       </div>
       <div class="collapse" id="subTree">
         <ul class="list-group mt-2">
@@ -16,11 +18,12 @@
             <div class="d-flex">
               <span class="me-2">{{ car.defination_Name }}</span>
               <button
-                class="btn btn-sm btn-primary ms-auto"
+                class="btn btn-sm btn-secondary ms-auto"
                 data-bs-toggle="collapse"
                 [attr.data-bs-target]="'#' + car.defination_Name"
+                (click)="toggleButton()"
               >
-                Toggle
+                {{ buttonText }}
               </button>
             </div>
             <div
